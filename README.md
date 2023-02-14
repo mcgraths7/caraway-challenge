@@ -35,3 +35,7 @@ c. Spend more time getting the whole thing to "fit" in with the rest of the site
 d. Improve reusability across the board. A lot of values are hard coded, but the challenge mentioned not to worry about responsiveness. I did include a little bit in my grid layout with auto-fill, which I think is a really powerful tool, but I do think some components should be able to slot in more easily into different places. The Animated Button for example is hard coded in size, and might benefit from something like a size or color property which would let the developer share behavior, but customize the look for different scenarios.
 
 e. Use some sort of CSS in JS solution or CSS preprocessor. I just used vanilla CSS in this, and organized the file by challenge, but it could still stand to either be more organized or better named, perhaps with something like CSS modules. I had two "product-card" style class names, so I had to use -alt on one of them to differentiate. At Lumber, we used ThemeUI, which utilized EmotionJS under the hood, but setting up a theme file for something of this small scope seemed like overkill.
+
+Technology Used
+
+For this challenge, I used Vite + Netlify to quickly build and deploy a React App. I like Vite for things like this, as it uses ESBuild rather than Webpack, so builds are lightning fast.
