@@ -25,6 +25,8 @@
   --blue: #b0eaeb;
   --red: #ffc0b2;
   --background: #f1f0ef; 
+
+  --container-width: 1280px;
 }
 
 body {
@@ -57,12 +59,20 @@ nav {
   gap: 1rem;
 }
 
+.nav-button {
+  background-color: white;
+  padding: .5rem;
+  border: none;
+  box-shadow: 2px 2px 1px 1px rgba(0,0,0,0.3);
+}
+
 /* Challenge 1: Animated Button */
 
 .container {
-  background-color: slategray;
-  height: 100px;
-  width: 300px;
+  background-color: cornflowerblue;
+  max-width: var(--container-width);
+  margin: auto;
+  height: 80vh;
   position: relative;
   font-family: 'Open Sans', sans-serif;
   display: grid;
@@ -133,12 +143,12 @@ nav {
 .product-cards-container {
   font-family: 'Open Sans', sans-serif;
   background-color: var(--background);
-  min-height: 100vh;
-  max-width: 1440px;
+  max-width: var(--container-width);
   margin: auto;
   padding-block: 2rem;
   padding-inline: 1rem;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 285px);
   gap: 2rem;
 }
 
@@ -251,7 +261,7 @@ nav {
 /* Challenge 3 */
 
 .container-alt {
-  max-width: 1280px;
+  max-width: var(--container-width);
   margin: auto;
 }
 

@@ -8,9 +8,9 @@ const Header = () => {
     <header>
       <h1>Caraway Challenge</h1>
       <nav>
-        <div onClick={() => setActivePage(0)}>Button</div>
-        <div onClick={() => setActivePage(1)}>Local Products</div>
-        <div onClick={() => setActivePage(2)}>AllBirds Products</div>
+        <button className="nav-button" onClick={() => setActivePage(0)}>Button</button>
+        <button className="nav-button" onClick={() => setActivePage(1)}>Local Products</button>
+        <button className="nav-button" onClick={() => setActivePage(2)}>AllBirds Products</button>
       </nav>
     </header>
   );

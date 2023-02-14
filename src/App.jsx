@@ -12,6 +12,7 @@ import sweetProdImg from "./assets/fluffy-product.png";
 import sweetBgImg from "./assets/fluffy-bg.jpg";
 import Layout from "./components/layout/Layout";
 import { PageContext } from "./context/PageContext";
+import { Helmet } from "react-helmet";
 
 const products = [
   {
@@ -50,6 +51,7 @@ function App() {
     <Layout>
       {activePage === 0 && (
         <div className="container">
+          <Helmet title="Animated Button | Caraway Challenge" />
           <AnimatedButton>Add to Cart</AnimatedButton>
         </div>
       )}

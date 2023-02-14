@@ -1,20 +1,9 @@
 import { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 import ClipLoader from "react-spinners/ClipLoader";
 
+import parseCategories from "../../util/parse-categories";
 import CategoryCollection from "./CategoryCollection";
-
-const parseCategories = (data) => {
-  return data.reduce((acc, current) => {
-    const type = current.product_type;
-    if (acc[`${type}`]) {
-      acc[`${type}`].push(current);
-    } else {
-      acc[`${type}`] = [current];
-    }
-    return acc;
-  }, {});
-};
-
 
 const ProductCollection = () => {
   const [data, setData] = useState();
@@ -46,6 +35,7 @@ const ProductCollection = () => {
   if (data) {
     return (
       <div className="container-alt">
+        <Helmet title="AllBirds Collection | Caraway Challenge" />
         {Object.entries(data).map((category, idx) => (
           <CategoryCollection
             key={`collection-${idx}`}
