@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+
+@font-face {
+  font-family: "HafferXH-Regular";
+  src: url("./fonts/HafferXH-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "HafferXH-Medium";
+  src: url("./fonts/HafferXH-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "HafferXH-Bold";
+  src: url("./fonts/HafferXH-Bold.woff2") format("woff2");
+}
+
+:root {
+  /* Button colors */
+  --button-default: #353b48;
+  --button-offset: #f5f6fa;
+  --button-background: #c3f63b;
+
+
+  /* Product card colors */
+  --yellow: #eeea8c;
+  --blue: #b0eaeb;
+  --red: #ffc0b2;
+  --background: #f1f0ef; 
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "HafferXH-Regular";
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Layout */
+
+header {
+  border-bottom: 1px solid gray;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Challenge 1: Animated Button */
+
+.container {
+  background-color: slategray;
+  height: 100px;
+  width: 300px;
+  position: relative;
+  font-family: 'Open Sans', sans-serif;
+  display: grid;
+  place-items: center;
+}
+
+.btn-wrapper {
+  position: relative;
+  width: 200px;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  font-size: 1.15rem;
+  letter-spacing: 2px;
+}
+
+.btn {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  border: none;
+  text-transform: uppercase;
+  border-radius: 50px;
+  color: var(--button-background);
+  background-color: var(--button-default);
+  transition: all 0.35s ease;
+  width: 100%;
+  height: 100%;
+  transform: translateX(0) translateY(0);
+  box-shadow: 3px 3px 4px 0 rgba(0,0,0,0.3);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-shadow {
+  z-index: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 50px;
+  background-color: var(--button-offset);
+  width: 100%;
+  height: 100%;
+  transform: translateX(8px) translateY(8px);
+  transition: all 0.35s ease;
+}
+
+
+.btn-wrapper:hover .btn {
+  transform: translateX(8px) translateY(8px);
+  background-color: var(--button-offset);
+  color: var(--button-default);
+}
+
+.btn-wrapper:hover .btn-shadow {
+  background-color: var(--button-default);
+  transform: translateX(0) translateY(0);
+}
+
+
+/* Challenge 2: Product Cards */
+
+.product-cards-container {
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--background);
+  min-height: 100vh;
+  max-width: 1440px;
+  margin: auto;
+  padding-block: 2rem;
+  padding-inline: 1rem;
+  display: flex;
+  gap: 2rem;
+}
+
+/* Cards are 285x640 */
+
+/* 280 + 180 + 180 */
+
+.product-card {
+  position: relative;
+  height: 640px;
+  width: 285px;
+  display: flex;
+  flex-direction: column;
+  font-family: "HafferXH-Regular";
+  background-color: white;
+}
+
+.product-details-ingredients {
+  font-size: 0.85rem;
+}
+
+.product-details-ingredients strong {
+  font-family: "HafferXH-Bold";
+}
+
+.product-card h2 {
+  font-family: "HafferXH-Medium";
+}
+
+.product-cta-btn {
+  width: 100%;
+  padding: 1.4rem 1rem;
+  border-radius: 500px;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.btn-yellow, .btn-blue, .btn-red {
+  border: none;
+}
+
+.btn-yellow {
+  background-color: var(--yellow);
+}
+
+.btn-blue {
+  background-color: var(--blue);
+}
+
+.btn-red {
+  background-color: var(--red);
+}
+
+.product-images {
+  flex: 1.55 1 auto;
+}
+
+.product-bg-image {
+  width: 100%;
+  height: 220px;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  left: 0;
+  top: 30px;
+  object-fit: contain;
+  transition: all 0.25s ease;
+  overflow: hidden;
+}
+
+.product-image:hover {
+  transform: scale(1.05);
+}
+
+
+.product-details, .product-cta {
+  flex: 1 1 auto;
+  padding-inline: 1rem;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.product-details > * {
+  margin: 0;
+}
+
+.product-details h2 {
+  margin-bottom: 0.5rem;
+}
+
+.product-details p {
+  margin-bottom: 1.5rem;
+}
+
+.product-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Challenge 3 */
+
+.container-alt {
+  max-width: 1280px;
+  margin: auto;
+}
+
+.category-container h2 {
+  font-size: 5rem;
+  font-weight: 400;
+  margin: 2rem 0;
+}
+
+.category-container button {
+  display: block;
+  margin: 4rem auto;
+}
+
+.product-collection-alt {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 400px);
+  gap: 2rem 2rem;
+  place-items: center;
+  margin-bottom: 1rem;
+}
+
+
+.product-card-alt-details * {
+  margin: 0;
+  padding: 0;
+}
+
+.product-card-alt *>* {
+  margin-top: 0.25rem;
+}
+
+.product-card-alt-images {
+  background-color: rgb(246,246,246);
+  position: relative;
+}
+
+.product-card-alt-title {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.product-card-alt h3 {
+  font-size: 1rem;
+  font-family: "HafferXH-Medium";
+}
+
+.product-card-alt-new-pill {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border-radius: 5000px;
+  background-color: grey;
+  font-size: 0.75rem;
+  color: white;
+  font-family: "HafferXH-Medium";
+  padding: 0.25rem 0.5rem;
+}
+
+.product-card-alt-price {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.product-card-alt-cta button {
+  display: block; 
+  margin: auto;
+}
+
+.strikeout {
+  text-decoration: line-through;
+}
+
+.super-center {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
